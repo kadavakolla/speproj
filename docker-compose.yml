@@ -1,0 +1,31 @@
+version: '3'
+services:
+  frontend:
+    image: gangster569/frontend-image:latest
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_CLOUDINARY_CLOUD_NAME: dpc7fwkte
+      REACT_APP_BACKEND_URL: http://backend:8081  # Use service name (backend) instead of localhost
+      FRONTEND_URL: http://localhost:3000
+    networks:
+      - app-network
+
+  backend:
+    image: gangster569/backend-image:latest
+    ports:
+      - "8080:8080"
+    environment:
+      MONGODB_URI: mongodb+srv://kadavakollagowthamreddy:gowthamreddy@chat-app.st4mb.mongodb.net/?retryWrites=true&w=majority&appName=chat-app
+      JWT_SECRET_KEY: jhdcjhsdvchjsdhbfasdgbvs
+      PORT: 8081
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
