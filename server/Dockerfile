@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Set memory limits for Node.js (optional but helpful for large apps)
-ENV NODE_OPTIONS=--max_old_space_size=1024
+ENV NODE_OPTIONS="--max_old_space_size=2048"
 
 # Expose the port for the backend
 EXPOSE 8081
