@@ -16,7 +16,7 @@ COPY . .
 ENV NODE_OPTIONS=--max_old_space_size=1024
 
 # Expose the port for the backend
-EXPOSE 8080
+EXPOSE 8081
 
 # Start the app in development mode
 CMD ["npm", "run", "dev"]  # or "start" if you want to run in production mode
