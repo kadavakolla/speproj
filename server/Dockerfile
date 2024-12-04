@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 8081
 
 # Start the app in development mode
-CMD ["npm", "run", "dev"]  # or "start" if you want to run in production mode
+CMD ["npm", "run", "start"]  # or "start" if you want to run in production mode
