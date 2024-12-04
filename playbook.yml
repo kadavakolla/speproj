@@ -12,4 +12,4 @@
         dest: "{{ playbook_dir }}/docker-compose.yml"
 
     - name: Run Docker Compose
-      command: docker-compose up --detach
+      command: docker-compose up -d
