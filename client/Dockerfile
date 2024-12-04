@@ -1,10 +1,11 @@
 FROM node:18.0.0-alpine
 
 # Set working directory
-WORKDIR /
+WORKDIR /app
 
 # Copy the package.json files
-COPY package*.json ./
+COPY package*.json ./app
+# COPY tailwind.config.js /app
 
 # Install dependencies
 RUN npm install

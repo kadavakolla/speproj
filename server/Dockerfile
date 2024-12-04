@@ -1,10 +1,10 @@
 FROM node:18.0.0-alpine
 
 # Set working directory
-WORKDIR /
+WORKDIR /app
 
 # Copy the package.json files
-COPY package*.json ./
+COPY package*.json ./app
 
 # Install dependencies
 RUN npm install
@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Set memory limits for Node.js (optional but helpful for large apps)
-ENV NODE_OPTIONS=--max_old_space_size=1024
+# ENV NODE_OPTIONS=--max_old_space_size=1024
 
 # Expose the port for the backend
 EXPOSE 8081
