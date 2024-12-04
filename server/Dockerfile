@@ -1,10 +1,10 @@
 FROM node:21
 
 # Set working directory
-WORKDIR /app
+WORKDIR /
 
 # Copy the package.json files
-COPY package*.json ./app
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install

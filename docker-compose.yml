@@ -2,6 +2,7 @@ version: '3'
 services:
   frontend:
     image: gangster569/frontend-image:latest
+    restart: always
     ports:
       - "3000:3000"
     environment:
@@ -14,6 +15,7 @@ services:
 
   backend:
     image: gangster569/backend-image:latest
+    restart: always
     ports:
       - "8081:8081"
     environment:
