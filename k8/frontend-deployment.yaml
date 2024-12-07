@@ -15,7 +15,17 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: asrith1158/frontend-image:latest
+          image: gowtham569/frontend-image:latest
           ports:
             - containerPort: 3000
-
+          env:
+            - name: REACT_APP_CLOUDINARY_CLOUD_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: mern-frontend-secret
+                  key: REACT_APP_CLOUDINARY_CLOUD_NAME
+            - name: REACT_APP_BACKEND_URL
+              valueFrom:
+                secretKeyRef:
+                  name: mern-frontend-secret
+                  key: REACT_APP_BACKEND_URL

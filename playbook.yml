@@ -1,7 +1,7 @@
 ---
 - name: Deploy MERN Application
   hosts: all
-  become: true
+  become: false
   vars:
     ansible_become_pass: "9960"
 
@@ -10,6 +10,8 @@
       copy:
         src: docker-compose.yml
         dest: "{{ playbook_dir }}/docker-compose.yml"
-
+    - name: debug
+      debug:
+        
     - name: Run Docker Compose
       command: docker-compose up -d

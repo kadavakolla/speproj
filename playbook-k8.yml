@@ -3,12 +3,21 @@
   hosts: all
   tasks:
 
-    - name: install pre-requisites
-      pip:
-        name:
-          - openshift
-          - pyyaml
-          - kubernetes
+    # - name: install pre-requisites
+    #   pip:
+    #     name:
+    #       - openshift
+    #       - pyyaml
+    #       - kubernetes
+
+    - name: Create Namespace
+      kubernetes.core.k8s:
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: mern-app
 
     - name: Apply Secrets
       kubernetes.core.k8s:
