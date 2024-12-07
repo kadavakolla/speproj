@@ -34,12 +34,15 @@ const CheckPasswordPage = () => {
       }
     })
   }
+  const backendUrl = window.location.hostname === 'localhost' ? 
+    'http://localhost:8081' : 
+    'http://192.168.49.2:30002';
 
   const handleSubmit = async(e)=>{
     e.preventDefault()
     e.stopPropagation()
 
-    const URL = `${process.env.REACT_APP_BACKEND_URL}/api/password`
+    const URL = `${backendUrl}/api/password`
 
     try {
         const response = await axios({
@@ -118,4 +121,3 @@ const CheckPasswordPage = () => {
 }
 
 export default CheckPasswordPage
-
