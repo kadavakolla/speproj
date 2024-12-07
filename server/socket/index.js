@@ -11,10 +11,10 @@ const app = express()
 /***socket connection */
 const server = http.createServer(app)
 const io = new Server(server,{
-    cors : {
-        origin : 'ws://192.168.49.2/30001/ws',
-        credentials : true
-    }
+    cors: {
+        origin: "http://192.168.49.2:30001", // Match client URL (without /ws)
+        credentials: true
+    }    
 })
 
 /***
