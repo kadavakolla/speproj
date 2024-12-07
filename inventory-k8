@@ -1,1 +1,5 @@
-localhost ansible_connection=local ansible_user=gowtham ansible_python_interpreter=/usr/bin/python3
+[ansible_nodes]
+localhost ansible_user=charansrisai ansible_python_interpreter=/usr/bin/python3
+
+[ansible_nodes:vars]
+ansible_connection=local
