@@ -52,7 +52,7 @@ pipeline {
         stage('Docker Compose') {
             steps {
                 script {
-                    sh 'ansible-playbook -i /home/gowtham/spe_proj/inventory /home/gowtham/spe_proj/playbook.yml'
+                    sh 'ansible-playbook -i inventory playbook.yml'
                 }
             }
         }
