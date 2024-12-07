@@ -34,9 +34,7 @@ const CheckPasswordPage = () => {
       }
     })
   }
-  const backendUrl = window.location.hostname === 'localhost' ? 
-    'http://localhost:8081' : 
-    'http://192.168.49.2:30157';
+  const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:8081' : 'ws://192.168.49.2:30157/ws';
 
   const handleSubmit = async(e)=>{
     e.preventDefault()
@@ -55,6 +53,7 @@ const CheckPasswordPage = () => {
           withCredentials : true
         })
 
+
         toast.success(response.data.message)
 
         if(response.data.success){
@@ -65,6 +64,7 @@ const CheckPasswordPage = () => {
               password : "",
             })
             navigate('/')
+            // console.log
         }
     } catch (error) {
         toast.error(error?.response?.data?.message)

@@ -11,5 +11,5 @@ spec:
     - name: http
       port: 8081
       targetPort: 8081
-      NodePort: 30157
+      nodePort: 30157
   

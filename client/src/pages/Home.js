@@ -37,9 +37,7 @@ const Home = () => {
   useEffect(()=>{
     fetchUserDetails()
   },[])
-  const backendUrl = window.location.hostname === 'localhost' ? 
-    'http://localhost:8081' : 
-    'http://192.168.49.2:30157';
+  const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:8081' : 'ws://192.168.49.2:30157/ws';
 
   /***socket connection */
   useEffect(()=>{
