@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: gowtham569/frontend-image:latest
+          image: gangster569/frontend-image:latest
           ports:
             - containerPort: 3000
           env:
@@ -29,3 +29,8 @@ spec:
                 secretKeyRef:
                   name: mern-frontend-secret
                   key: REACT_APP_BACKEND_URL
+            - name: REACT_APP_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: frontend-configmap
+                  key: REACT_APP_BASE_URL

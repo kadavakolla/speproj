@@ -51,20 +51,12 @@
 - name: Deploying with Kubernetes
   hosts: all
   tasks:
-
-    # - name: Install pre-requisites
-    #   pip:
-    #     name:
-    #       - openshift
-    #       - pyyaml
-    #       - kubernetes 
-
     - name: Apply backend Secrets
       kubernetes.core.k8s:
         state: present
         definition: "{{ lookup('file', './k8/mern-backend-secret.yaml') | from_yaml }}"
 
-    name: Apply frontend Secrets
+    - name: Apply frontend Secrets
       kubernetes.core.k8s:
         state: present
         definition: "{{ lookup('file', './k8/mern-frontend-secret.yaml') | from_yaml }}"

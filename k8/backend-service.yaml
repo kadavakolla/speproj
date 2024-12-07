@@ -10,4 +10,5 @@ spec:
     - name: http
       port: 8081
       targetPort: 8081
-      nodePort: 30002
+      # NodePort: 3000
+  type: NodePort
