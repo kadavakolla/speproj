@@ -39,7 +39,7 @@ const Home = () => {
   },[])
   const backendUrl = window.location.hostname === 'localhost' ? 
     'http://localhost:8081' : 
-    'http://192.168.49.2:30002';
+    'http://192.168.49.2:30157';
 
   /***socket connection */
   useEffect(()=>{
