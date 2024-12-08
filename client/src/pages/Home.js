@@ -14,7 +14,7 @@ const Home = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:8081' : 'http://192.168.49.2:30157';
-  console.log('user',user)
+  
   const fetchUserDetails = async()=>{
     try {
         const URL = `${backendUrl}/api/user-details`

@@ -53,7 +53,7 @@ const CheckPasswordPage = () => {
           withCredentials : true
         })
 
-        console.log(data)
+        
         toast.success(response.data.message)
 
         if(response.data.success){
@@ -63,7 +63,7 @@ const CheckPasswordPage = () => {
             setData({
               password : "",
             })
-            navigate('/')
+            navigate('')
             // console.log
         }
     } catch (error) {
