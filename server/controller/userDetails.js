@@ -5,7 +5,7 @@ async function userDetails(request,response){
         const token = request.cookies.token || ""
         console.log("tokencheck",token)
         const user = await getUserDetailsFromToken(token)
-        console.log('userdetailsfromtoken',user.name)
+        console.log('userdetailsfromtoken',user)
         return response.status(200).json({
             message : "user details",
             data : user
