@@ -7,9 +7,9 @@ async function checkPassword(request,response){
         const { password, userId } = request.body
 
         const user = await UserModel.findById(userId)
-
+        console.log(user)
         const verifyPassword = await bcryptjs.compare(password,user.password)
-
+        console.log("verifypass",verifyPassword)
         if(!verifyPassword){
             return response.status(400).json({
                 message : "Please check password",
