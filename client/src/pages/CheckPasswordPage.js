@@ -41,7 +41,7 @@ const CheckPasswordPage = () => {
     e.stopPropagation()
 
     const URL = `${backendUrl}/api/password`
-    console.log('frgwgwrg5',data)
+    // console.log('frgwgwrg5',data)
     try {
         const response = await axios({
           method :'post',
@@ -59,7 +59,7 @@ const CheckPasswordPage = () => {
         if(response.data.success){
             dispatch(setToken(response?.data?.token))
             localStorage.setItem('token',response?.data?.token)
-            console.log(response)
+            // console.log(response)
             setData({
               password : "/",
             })
@@ -69,7 +69,7 @@ const CheckPasswordPage = () => {
     } catch (error) {
         toast.error(error?.response?.data?.message)
     }
-    console.log('frgwgwrg6')
+    // console.log('frgwgwrg6')
   }
 
 

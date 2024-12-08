@@ -3,9 +3,9 @@ const UserModel = require("../models/UserModel")
 async function checkEmail(request,response){
     try {
         const { email } = request.body
-        console.log("'checkemail'",email)
+        // console.log("'checkemail'",email)
         const checkEmail = await UserModel.findOne({email}).select("-password")
-        console.log("checkemailuser",checkEmail)
+        // console.log("checkemailuser",checkEmail)
         if(!checkEmail){
             return response.status(400).json({
                 message : "user not exit",

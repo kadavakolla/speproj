@@ -12,8 +12,8 @@ const app = express()
 const server = http.createServer(app)
 const io = new Server(server,{
     cors: {
-        origin:'http://192.168.49.2:30001',
-        // origin:'http://localhost:3000',
+        // origin:'http://192.168.49.2:30001',
+        origin:'http://localhost:3000',
         credentials: true
     }    
 })
@@ -26,7 +26,7 @@ const io = new Server(server,{
 const onlineUser = new Set()
 
 io.on('connection',async(socket)=>{
-    console.log("connect User ", socket.id)
+    // console.log("connect User ", socket.id)
 
     const token = socket.handshake.auth.token 
 
@@ -41,9 +41,9 @@ io.on('connection',async(socket)=>{
     io.emit('onlineUser',Array.from(onlineUser))
 
     socket.on('message-page',async(userId)=>{
-        console.log('userId',userId)
+        // console.log('userId',userId)
         const userDetails = await UserModel.findById(userId).select("-password")
-        console.log(userDetails)
+        // console.log(userDetails)
         const payload = {
             _id : userDetails?._id,
             name : userDetails?.name,
@@ -121,7 +121,7 @@ io.on('connection',async(socket)=>{
 
     //sidebar
     socket.on('sidebar',async(currentUserId)=>{
-        console.log("current user",currentUserId)
+        // console.log("current user",currentUserId)
 
         const conversation = await getConversation(currentUserId)
 
@@ -156,7 +156,7 @@ io.on('connection',async(socket)=>{
     //disconnect
     socket.on('disconnect',()=>{
         onlineUser.delete(user?._id?.toString())
-        console.log('disconnect user ',socket.id)
+        // console.log('disconnect user ',socket.id)
     })
 })
 

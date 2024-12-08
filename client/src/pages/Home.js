@@ -29,7 +29,7 @@ const Home = () => {
             dispatch(logout())
             navigate("/email")
         }
-        console.log("current user Details",response)
+        // console.log("current user Details",response)
     } catch (error) {
         console.log("error",error)
     }
@@ -37,7 +37,7 @@ const Home = () => {
 
   useEffect(()=>{
     fetchUserDetails()
-  },[])
+  },[user])
   
 
   /***socket connection */
@@ -49,8 +49,8 @@ const Home = () => {
     })
 
     socketConnection.on('onlineUser',(data)=>{
-      console.log(data)
-      dispatch(setOnlineUser(data))
+      // console.log(data)
+      dispatch(setOnlineUser(data)) 
     })
 
     dispatch(setSocketConnection(socketConnection))
