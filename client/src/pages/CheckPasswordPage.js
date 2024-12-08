@@ -41,7 +41,7 @@ const CheckPasswordPage = () => {
     e.stopPropagation()
 
     const URL = `${backendUrl}/api/password`
-
+    console.log('frgwgwrg5')
     try {
         const response = await axios({
           method :'post',
@@ -53,7 +53,7 @@ const CheckPasswordPage = () => {
           withCredentials : true
         })
 
-
+        console.log(data)
         toast.success(response.data.message)
 
         if(response.data.success){
@@ -69,6 +69,7 @@ const CheckPasswordPage = () => {
     } catch (error) {
         toast.error(error?.response?.data?.message)
     }
+    console.log('frgwgwrg6')
   }
 
 
