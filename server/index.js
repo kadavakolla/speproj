@@ -8,7 +8,7 @@ const { app, server } = require('./socket/index')
 
 // const app = express()
 app.use(cors({
-    origin : 'http://192.168.49.2/30001',
+    origin : '*',
     credentials : true
 }))
 app.use(express.json())

@@ -12,7 +12,7 @@ const app = express()
 const server = http.createServer(app)
 const io = new Server(server,{
     cors: {
-        origin: "http://192.168.49.2:30001", // Match client URL (without /ws)
+        origin: '*', 
         credentials: true
     }    
 })

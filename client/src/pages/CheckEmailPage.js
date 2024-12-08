@@ -31,7 +31,7 @@ const CheckEmailPage = () => {
     
 
     const URL = `${backendUrl}/api/email`
-
+    console.log('frgwgwrg5')
     try {
         const response = await axios.post(URL,data)
 

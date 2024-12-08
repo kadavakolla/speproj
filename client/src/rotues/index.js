@@ -18,7 +18,7 @@ const router = createBrowserRouter([
             element : <AuthLayouts><RegisterPage/></AuthLayouts>
         },
         {
-            path : '/email',
+            path : 'email',
             element : <AuthLayouts><CheckEmailPage/></AuthLayouts>
         },
         {
