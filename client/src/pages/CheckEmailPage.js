@@ -33,8 +33,9 @@ const CheckEmailPage = () => {
     const URL = `${backendUrl}/api/email`
     
     try {
+        console.log("emaildat",data)
         const response = await axios.post(URL,data)
-
+        console.log("emailres",response)
         toast.success(response.data.message)
 
         if(response.data.success){
