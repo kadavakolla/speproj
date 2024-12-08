@@ -63,7 +63,7 @@ const CheckPasswordPage = () => {
             setData({
               password : "/",
             })
-            navigate('')
+            navigate('/')
             // console.log
         }
     } catch (error) {
