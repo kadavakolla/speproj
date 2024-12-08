@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             element : <AuthLayouts><Forgotpassword/></AuthLayouts>
         },
         {
-            path : "home",
+            path : "",
             element : <Home/>,
             children : [
                 {
