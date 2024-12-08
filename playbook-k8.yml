@@ -51,10 +51,10 @@
 - name: Deploying with Kubernetes
   hosts: all
   tasks:
-    # - name: Apply backend Secrets
-    #   kubernetes.core.k8s:
-    #     state: present
-    #     definition: "{{ lookup('file', './k8/mern-backend-secret.yaml') | from_yaml }}"
+    - name: Apply backend Secrets
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', './k8/mern-backend-secret.yaml') | from_yaml }}"
 
     - name: Apply frontend Secrets
       kubernetes.core.k8s:
@@ -78,22 +78,22 @@
         state: present
         definition: "{{ lookup('file', './k8/frontend-service.yaml') | from_yaml }}"
 
-    # - name: Create Backend Deployment
-    #   kubernetes.core.k8s:
-    #     state: present
-    #     definition: "{{ lookup('file', './k8/backend-deployment.yaml') | from_yaml }}"
+    - name: Create Backend Deployment
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', './k8/backend-deployment.yaml') | from_yaml }}"
       args:
         force: yes  # Force recreation to ensure changes take effect
 
-    # - name: Create Backend Service
-    #   kubernetes.core.k8s:
-    #     state: present
-    #     definition: "{{ lookup('file', './k8/backend-service.yaml') | from_yaml }}"
+    - name: Create Backend Service
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', './k8/backend-service.yaml') | from_yaml }}"
 
-    # - name: Create Ingress
-    #   kubernetes.core.k8s:
-    #     state: present
-    #     definition: "{{ lookup('file', './k8/mern-ingress.yaml') | from_yaml }}"
+    - name: Create Ingress
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', './k8/mern-ingress.yaml') | from_yaml }}"
 
     - name: Ensure Frontend Deployment uses the latest image
       kubernetes.core.k8s:
@@ -111,21 +111,21 @@
                   - name: frontend
                     imagePullPolicy: Always
 
-    # - name: Ensure Backend Deployment uses the latest image
-    #   kubernetes.core.k8s:
-    #     state: patched
-    #     definition:
-    #       apiVersion: apps/v1
-    #       kind: Deployment
-    #       metadata:
-    #         name: backend-deployment
-    #         namespace: mern-app
-    #       spec:
-    #         template:
-    #           spec:
-    #             containers:
-    #               - name: backend
-    #                 imagePullPolicy: Always
+    - name: Ensure Backend Deployment uses the latest image
+      kubernetes.core.k8s:
+        state: patched
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: backend-deployment
+            namespace: mern-app
+          spec:
+            template:
+              spec:
+                containers:
+                  - name: backend
+                    imagePullPolicy: Always
 
     - name: Verify Frontend Deployment is running
       kubernetes.core.k8s_info:
@@ -139,14 +139,14 @@
       debug:
         var: frontend_deployment_status.resources[0].status
 
-    # - name: Verify Backend Deployment is running
-    #   kubernetes.core.k8s_info:
-    #     api_version: apps/v1
-    #     kind: Deployment
-    #     name: backend-deployment
-    #     namespace: mern-app
-    #   register: backend_deployment_status
+    - name: Verify Backend Deployment is running
+      kubernetes.core.k8s_info:
+        api_version: apps/v1
+        kind: Deployment
+        name: backend-deployment
+        namespace: mern-app
+      register: backend_deployment_status
 
-    # - name: Debug Backend Deployment Status
-    #   debug:
-    #     var: backend_deployment_status.resources[0].status
+    - name: Debug Backend Deployment Status
+      debug:
+        var: backend_deployment_status.resources[0].status
