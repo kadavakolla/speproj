@@ -61,7 +61,7 @@ const CheckPasswordPage = () => {
             localStorage.setItem('token',response?.data?.token)
 
             setData({
-              password : "",
+              password : "/home",
             })
             navigate('')
             // console.log
