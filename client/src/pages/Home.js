@@ -8,12 +8,12 @@ import logo from '../assets/logo.png'
 import io from 'socket.io-client'
 
 const Home = () => {
-  const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:8081' : 'http://192.168.49.2:30157';
+  
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const location = useLocation()
-
+  const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:8081' : 'http://192.168.49.2:30157';
   console.log('user',user)
   const fetchUserDetails = async()=>{
     try {
