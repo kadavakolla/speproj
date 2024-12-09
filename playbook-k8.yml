@@ -51,10 +51,21 @@
 - name: Deploying with Kubernetes
   hosts: all
   tasks:
+
+
     - name: Apply backend Secrets
       kubernetes.core.k8s:
         state: present
         definition: "{{ lookup('file', './k8/mern-backend-secret.yaml') | from_yaml }}"
+
+    - name: Create Namespace
+      kubernetes.core.k8s:
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: mern-app
 
     - name: Apply frontend Secrets
       kubernetes.core.k8s:
