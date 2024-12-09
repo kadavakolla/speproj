@@ -8,8 +8,8 @@ const { app, server } = require('./socket/index')
 
 // const app = express()
 app.use(cors({
-    // origin :'http://192.168.49.2:30001',
-    origin:'http://localhost:3000',
+    origin :'http://192.168.49.2:30001',
+    // origin:'http://localhost:3000',
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }))
