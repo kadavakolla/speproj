@@ -7,6 +7,7 @@ pipeline {
        REACT_APP_CLOUDINARY_CLOUD_NAME = 'dpc7fwkte'
        REACT_APP_BACKEND_URL = 'http://localhost:8081'
        PORT='8081'
+       KUBECONFIG = "/var/lib/jenkins/.kube/config"
     }
     stages {
         stage('Clone Git') {
