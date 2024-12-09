@@ -62,7 +62,8 @@ const EditUserDetails = ({onClose,user}) => {
         e.preventDefault()
         e.stopPropagation()
         try {
-            const URL = `${process.env.REACT_APP_BACKEND_URL}/api/update-user`
+            const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:8081' : 'http://192.168.49.2:30157';
+            const URL = `${backendUrl}/api/update-user`
 
             const response = await axios({
                 method : 'post',
