@@ -1,52 +1,3 @@
-# ---
-# - name: Deploying with Kubernetes
-#   hosts: all
-#   tasks:
-
-#     - name: install pre-requisites
-#       pip:
-#         name:
-#           - openshift
-#           - pyyaml
-#           - kubernetes 
-
-#     - name: Apply Secrets
-#       kubernetes.core.k8s:
-#         state: present
-#         definition: "{{ lookup('file', './k8/mern-backend-secret.yaml') | from_yaml }}"
-
-#     - name: Create Frontend Deployment
-#       kubernetes.core.k8s:
-#         state: present
-#         definition: "{{ lookup('file', './k8/frontend-deployment.yaml') | from_yaml }}" 
-
-#     - name: Create Frontend Service
-#       kubernetes.core.k8s:
-#         state: present
-#         definition: "{{ lookup('file', './k8/frontend-service.yaml') | from_yaml }}" 
-
-
-#     - name: Create Backend Deployment
-#       kubernetes.core.k8s:
-#         state: present
-#         definition: "{{ lookup('file', './k8/backend-deployment.yaml') | from_yaml }}"
-
-#     - name: Create Backend Service
-#       kubernetes.core.k8s:
-#         state: present
-#         definition: "{{ lookup('file', './k8/backend-service.yaml') | from_yaml }}"
-
-
-#     - name: Create Config Map
-#       kubernetes.core.k8s:
-#         state: present
-#         definition: "{{ lookup('file', './k8/frontend-configmap.yaml') | from_yaml }}" 
-
-#     - name: Create Ingress
-#       kubernetes.core.k8s:
-#         state: present
-#         definition: "{{ lookup('file', './k8/mern-ingress.yaml') | from_yaml }}" 
-
 ---
 - name: Deploying with Kubernetes
   hosts: all
@@ -65,8 +16,6 @@
       kubernetes.core.k8s:
         state: present
         definition: "{{ lookup('file', './k8/mern-backend-secret.yaml') | from_yaml }}"
-
-    
 
     - name: Apply frontend Secrets
       kubernetes.core.k8s:
@@ -107,58 +56,12 @@
         state: present
         definition: "{{ lookup('file', './k8/mern-ingress.yaml') | from_yaml }}"
 
-    - name: Ensure Frontend Deployment uses the latest image
+    - name: Create Backend HPA
       kubernetes.core.k8s:
-        state: patched
-        definition:
-          apiVersion: apps/v1
-          kind: Deployment
-          metadata:
-            name: frontend-deployment
-            namespace: mern-app
-          spec:
-            template:
-              spec:
-                containers:
-                  - name: frontend
-                    imagePullPolicy: Always
+        state: present
+        definition: "{{ lookup('file', './k8/backend-hpa.yaml') | from_yaml }}"
 
-    - name: Ensure Backend Deployment uses the latest image
+    - name: Create Frontend HPA
       kubernetes.core.k8s:
-        state: patched
-        definition:
-          apiVersion: apps/v1
-          kind: Deployment
-          metadata:
-            name: backend-deployment
-            namespace: mern-app
-          spec:
-            template:
-              spec:
-                containers:
-                  - name: backend
-                    imagePullPolicy: Always
-
-    - name: Verify Frontend Deployment is running
-      kubernetes.core.k8s_info:
-        api_version: apps/v1
-        kind: Deployment
-        name: frontend-deployment
-        namespace: mern-app
-      register: frontend_deployment_status
-
-    - name: Debug Frontend Deployment Status
-      debug:
-        var: frontend_deployment_status.resources[0].status
-
-    - name: Verify Backend Deployment is running
-      kubernetes.core.k8s_info:
-        api_version: apps/v1
-        kind: Deployment
-        name: backend-deployment
-        namespace: mern-app
-      register: backend_deployment_status
-
-    - name: Debug Backend Deployment Status
-      debug:
-        var: backend_deployment_status.resources[0].status
+        state: present
+        definition: "{{ lookup('file', './k8/frontend-hpa.yaml') | from_yaml }}"

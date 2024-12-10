@@ -1,20 +1,22 @@
-[11:40:17] [[32minfo[39m] [Validating password for userId: 67441e529913e67e4514bf3d]
-[11:40:17] [[32minfo[39m] [Password validation successful for userId: 67441e529913e67e4514bf3d]
-[11:40:17] [[32minfo[39m] [JWT token generated successfully for userId: 67441e529913e67e4514bf3d]
-[11:40:17] [[32minfo[39m] [Setting cookie 'token' for userId: 67441e529913e67e4514bf3d]
-[11:40:18] [[32minfo[39m] [Token received: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDQxZTUyOTkxM2U2N2U0NTE0YmYzZCIsImVtYWlsIjoidGVzdDJAZ21haWwuY29tIiwiaWF0IjoxNzMzODExMDE3LCJleHAiOjE3MzM4OTc0MTd9.KLFI2SBC02tt7thbeNuzPeDedc4m-kVj6IEHWAOXSRA]
-[11:40:18] [[32minfo[39m] [User details fetched successfully for userId: 67441e529913e67e4514bf3d]
-[11:40:18] [[32minfo[39m] [Token received: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDQxZTUyOTkxM2U2N2U0NTE0YmYzZCIsImVtYWlsIjoidGVzdDJAZ21haWwuY29tIiwiaWF0IjoxNzMzODExMDE3LCJleHAiOjE3MzM4OTc0MTd9.KLFI2SBC02tt7thbeNuzPeDedc4m-kVj6IEHWAOXSRA]
-[11:40:18] [[32minfo[39m] [User details fetched successfully for userId: 67441e529913e67e4514bf3d]
-[11:42:22] [[32minfo[39m] [Received request to check email: gowthamreddy50699@gmail.com]
-[11:42:22] [[31merror[39m] [Email not found in database: gowthamreddy50699@gmail.com]
-[11:42:28] [[32minfo[39m] [Received request to check email: test1@gmail.com]
-[11:42:28] [[32minfo[39m] [Email found in database: test1@gmail.com]
-[11:42:31] [[32minfo[39m] [Validating password for userId: 67441e349913e67e4514bf3a]
-[11:42:31] [[32minfo[39m] [Password validation successful for userId: 67441e349913e67e4514bf3a]
-[11:42:31] [[32minfo[39m] [JWT token generated successfully for userId: 67441e349913e67e4514bf3a]
-[11:42:31] [[32minfo[39m] [Setting cookie 'token' for userId: 67441e349913e67e4514bf3a]
-[11:42:31] [[32minfo[39m] [Token received: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDQxZTM0OTkxM2U2N2U0NTE0YmYzYSIsImVtYWlsIjoidGVzdDFAZ21haWwuY29tIiwiaWF0IjoxNzMzODExMTUxLCJleHAiOjE3MzM4OTc1NTF9.mTYEb7zb_aX2f4VV7OwUfqPou0lPn14oLaJU5-B8DBE]
-[11:42:31] [[32minfo[39m] [User details fetched successfully for userId: 67441e349913e67e4514bf3a]
-[11:42:31] [[32minfo[39m] [Token received: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDQxZTM0OTkxM2U2N2U0NTE0YmYzYSIsImVtYWlsIjoidGVzdDFAZ21haWwuY29tIiwiaWF0IjoxNzMzODExMTUxLCJleHAiOjE3MzM4OTc1NTF9.mTYEb7zb_aX2f4VV7OwUfqPou0lPn14oLaJU5-B8DBE]
-[11:42:31] [[32minfo[39m] [User details fetched successfully for userId: 67441e349913e67e4514bf3a]
+{"level":"info","message":"Received request to check email: test2@gmail.com","timestamp":"2024-12-10 14:06:36"}
+{"level":"info","message":"Email found in database: test2@gmail.com","timestamp":"2024-12-10 14:06:36"}
+{"level":"info","message":"Validating password for userId: 67441e529913e67e4514bf3d","timestamp":"2024-12-10 14:06:38"}
+{"level":"info","message":"Password validation successful for userId: 67441e529913e67e4514bf3d","timestamp":"2024-12-10 14:06:39"}
+{"level":"info","message":"JWT token generated successfully for userId: 67441e529913e67e4514bf3d","timestamp":"2024-12-10 14:06:39"}
+{"level":"info","message":"Setting cookie 'token' for userId: 67441e529913e67e4514bf3d","timestamp":"2024-12-10 14:06:39"}
+{"level":"info","message":"Token received: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDQxZTUyOTkxM2U2N2U0NTE0YmYzZCIsImVtYWlsIjoidGVzdDJAZ21haWwuY29tIiwiaWF0IjoxNzMzODE5Nzk5LCJleHAiOjE3MzM5MDYxOTl9.Ka25gf_x7rW5eomDasptS5Q_XywGITv-1BAvaCP1Fxc","timestamp":"2024-12-10 14:06:39"}
+{"level":"info","message":"User details fetched successfully for userId: 67441e529913e67e4514bf3d","timestamp":"2024-12-10 14:06:39"}
+{"level":"info","message":"Token received: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDQxZTUyOTkxM2U2N2U0NTE0YmYzZCIsImVtYWlsIjoidGVzdDJAZ21haWwuY29tIiwiaWF0IjoxNzMzODE5Nzk5LCJleHAiOjE3MzM5MDYxOTl9.Ka25gf_x7rW5eomDasptS5Q_XywGITv-1BAvaCP1Fxc","timestamp":"2024-12-10 14:06:39"}
+{"level":"info","message":"User details fetched successfully for userId: 67441e529913e67e4514bf3d","timestamp":"2024-12-10 14:06:39"}
+{"level":"info","message":"Received request to check email: test5@gmail.com","timestamp":"2024-12-10 14:06:55"}
+{"level":"info","message":"Email found in database: test5@gmail.com","timestamp":"2024-12-10 14:06:55"}
+{"level":"info","message":"Validating password for userId: 674c3da30dcbcedb3056b6b8","timestamp":"2024-12-10 14:06:58"}
+{"level":"error","message":"Invalid password for userId: 674c3da30dcbcedb3056b6b8","timestamp":"2024-12-10 14:06:58"}
+{"level":"info","message":"Validating password for userId: 674c3da30dcbcedb3056b6b8","timestamp":"2024-12-10 14:07:01"}
+{"level":"info","message":"Password validation successful for userId: 674c3da30dcbcedb3056b6b8","timestamp":"2024-12-10 14:07:01"}
+{"level":"info","message":"JWT token generated successfully for userId: 674c3da30dcbcedb3056b6b8","timestamp":"2024-12-10 14:07:01"}
+{"level":"info","message":"Setting cookie 'token' for userId: 674c3da30dcbcedb3056b6b8","timestamp":"2024-12-10 14:07:01"}
+{"level":"info","message":"Token received: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGMzZGEzMGRjYmNlZGIzMDU2YjZiOCIsImVtYWlsIjoidGVzdDVAZ21haWwuY29tIiwiaWF0IjoxNzMzODE5ODIxLCJleHAiOjE3MzM5MDYyMjF9.ZnJZR93QSgy3QUPFVmCEeuDYZgmaPDKSRRBDOH-3lvs","timestamp":"2024-12-10 14:07:01"}
+{"level":"info","message":"User details fetched successfully for userId: 674c3da30dcbcedb3056b6b8","timestamp":"2024-12-10 14:07:01"}
+{"level":"info","message":"Token received: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGMzZGEzMGRjYmNlZGIzMDU2YjZiOCIsImVtYWlsIjoidGVzdDVAZ21haWwuY29tIiwiaWF0IjoxNzMzODE5ODIxLCJleHAiOjE3MzM5MDYyMjF9.ZnJZR93QSgy3QUPFVmCEeuDYZgmaPDKSRRBDOH-3lvs","timestamp":"2024-12-10 14:07:01"}
+{"level":"info","message":"User details fetched successfully for userId: 674c3da30dcbcedb3056b6b8","timestamp":"2024-12-10 14:07:01"}

@@ -51,12 +51,17 @@ pipeline {
             }
         }
         stage('Ansible Deployment') {
-            steps
-            {
-                script {
-                    sh 'ansible-playbook -i inventory-k8 playbook-k8.yml'
-                }
+            steps {
+                ansiblePlaybook(
+                    colorized: true,
+                    credentialsId: 'localhost',
+                    disableHostKeyChecking: true,
+                    installation: 'Ansible',
+                    inventory: 'inventory-k8',
+                    playbook: 'playbook-k8.yml',
+                    sudoUser: null
+                )
             }
-        }
+         }
     }
 }
