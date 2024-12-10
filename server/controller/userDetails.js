@@ -1,55 +1,34 @@
-// const getUserDetailsFromToken = require("../helpers/getUserDetailsFromToken")
-
-// async function userDetails(request,response){
-//     try {
-//         const token = request.cookies.token || ""
-//         console.log("tokencheck",token)
-//         const user = await getUserDetailsFromToken(token)
-//         // console.log('userdetailsfromtoken',user)
-//         return response.status(200).json({
-//             message : "user details",
-//             data : user
-//         })
-//     } catch (error) {
-//         return response.status(500).json({
-//             message : error.message || error,
-//             error : true
-//         })
-//     }
-// }
-
-// module.exports = userDetails
-
-const getUserDetailsFromToken = require("../helpers/getUserDetailsFromToken")
+const logger = require('../logger/logging.js');
+const getUserDetailsFromToken = require("../helpers/getUserDetailsFromToken");
 
 async function userDetails(request, response) {
     try {
-        // Extract token from the Authorization header
-        const authHeader = request.headers['authorization']
-        const token = authHeader && authHeader.split(' ')[1]  // 'Bearer <token>'
+        const authHeader = request.headers['authorization'];
+        const token = authHeader && authHeader.split(' ')[1]; // 'Bearer <token>'
 
         if (!token) {
+            logger.error("Token not provided in request");
             return response.status(403).json({
                 message: "Token not provided",
                 error: true
-            })
+            });
         }
 
-        console.log("tokencheck", token)
+        logger.info(`Token received: ${token}`);
+        const user = await getUserDetailsFromToken(token);
 
-        // Use the token to fetch user details
-        const user = await getUserDetailsFromToken(token)
-
+        logger.info(`User details fetched successfully for userId: ${user.id}`);
         return response.status(200).json({
-            message: "User details fetched successfully",
+            message: "User details retrieved",
             data: user
-        })
+        });
     } catch (error) {
+        logger.error(`Error in userDetails: ${error.message}`);
         return response.status(500).json({
             message: error.message || error,
             error: true
-        })
+        });
     }
 }
 
-module.exports = userDetails
+module.exports = userDetails;
